@@ -120,12 +120,8 @@
 <main class="container">
   <!-- Sección de gráficas (lado derecho en desktop, arriba en móvil) -->
   <section id="graficas-container" aria-label="Gráficas">
-    <!-- Gráfica del eje AX -->
-    <div class="chart-wrapper"><canvas id="chartAX" aria-label="Gráfica AX" role="img"></canvas></div>
-    <!-- Gráfica del eje AY -->
-    <div class="chart-wrapper"><canvas id="chartAY" aria-label="Gráfica AY" role="img"></canvas></div>
-    <!-- Gráfica del eje AZ -->
-    <div class="chart-wrapper"><canvas id="chartAZ" aria-label="Gráfica AZ" role="img"></canvas></div>
+    <!-- Gráfica del EMG -->
+    <div class="chart-wrapper"><canvas id="chartEMG" aria-label="Gráfica EMG" role="img"></canvas></div>
   </section>
   
   <!-- Tabla de datos en tiempo real (lado izquierdo en desktop, abajo en móvil) -->
@@ -137,7 +133,7 @@
       <table id="data-table">
         <thead>
           <tr>
-            <th>AX</th><th>AY</th><th>AZ</th><th>EMG</th>
+            <th>EMG</th>
           </tr>
         </thead>
         <tbody></tbody>

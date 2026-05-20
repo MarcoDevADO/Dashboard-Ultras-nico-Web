@@ -1,8 +1,6 @@
 const tableBody = document.querySelector("#data-table tbody");
 
-const ctxAX = document.getElementById('chartAX').getContext('2d');
-const ctxAY = document.getElementById('chartAY').getContext('2d');
-const ctxAZ = document.getElementById('chartAZ').getContext('2d');
+const ctxEMG = document.getElementById('chartEMG').getContext('2d');
 
 function createLineChart(ctx, label, color){
     return new Chart(ctx, {
@@ -19,9 +17,7 @@ function createLineChart(ctx, label, color){
     });
 }
 
-const chartAX = createLineChart(ctxAX, 'AX', 'red');
-const chartAY = createLineChart(ctxAY, 'AY', 'green');
-const chartAZ = createLineChart(ctxAZ, 'AZ', 'blue');
+const chartEMG = createLineChart(ctxEMG, 'EMG', 'purple');
 
 function addData(chart, value) {
     chart.data.labels.push('');
@@ -64,10 +60,8 @@ async function updateData() {
 
         historial.forEach(dato => {
             const row = tableBody.insertRow();
-            row.insertCell(0).innerText = dato.ax;
-            row.insertCell(1).innerText = dato.ay;
-            row.insertCell(2).innerText = dato.az;
-            row.insertCell(3).innerText = dato.emg || "-";
+            row.insertCell(0).innerText = dato.emg || "-";
+            addData(chartEMG, dato.emg);
         });
 
     } catch (error) {
